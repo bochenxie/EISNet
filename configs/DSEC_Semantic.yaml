@@ -1,0 +1,33 @@
+DEVICE: 'cuda:0'
+NUM_WORKERS: 8
+SEED_NUM: 2
+
+DATASET:
+  name: 'DSECEvent'
+  path: '/data0/BochenSpace/Dataset/Semantic_Segmentation_DVS/DESC/desc_seg' # Replace with your own path
+  require_paired_data: True
+  classes: 11
+  event_representation: 'AET'
+  fixed_duration: False
+  nr_events: 100000
+  nr_bins: 3
+  img_chnls: 3
+
+MODEL:
+  version_ev: 'mit_b0'
+  pretrained_ev: True
+  version_img: 'mit_b2'
+  pretrained_img: True
+  pretrained_path: './models/pretrained_weights/SegFormer_MiT'
+  aet_rep: True
+
+TRAIN:
+  batch_size: 8
+  lr_init: 0.00006
+  num_epochs: 60
+  save_every_n_epochs: 60
+  log_dir: 'log/DSEC/EISNet'
+
+EVAL:
+  batch_size: 8
+  weight_path: 'weights/EISNet_DSEC_440x640.pth'

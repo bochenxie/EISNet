@@ -1,0 +1,33 @@
+DEVICE: 'cuda:0'
+NUM_WORKERS: 8
+SEED_NUM: 1
+
+DATASET:
+  name: 'DDD17Event'
+  path: '/data0/BochenSpace/Dataset/Semantic_Segmentation_DVS/DDD17/ddd17_seg/data' # Replace with your own path
+  require_paired_data: True
+  classes: 6
+  event_representation: 'AET'
+  fixed_duration: True
+  delta_t: 50
+  nr_bins: 3
+  img_chnls: 1
+
+MODEL:
+  version_ev: 'mit_b0'
+  pretrained_ev: True
+  version_img: 'mit_b2'
+  pretrained_img: True
+  pretrained_path: './models/pretrained_weights/SegFormer_MiT'
+  aet_rep: True
+
+TRAIN:
+  batch_size: 16
+  lr_init: 0.0002
+  num_epochs: 40
+  save_every_n_epochs: 40
+  log_dir: 'log/DDD17/EISNet'
+
+EVAL:
+  batch_size: 16
+  weight_path: 'weights/EISNet_DDD17_200x346.pth'
