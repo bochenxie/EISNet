@@ -1,2 +1,5 @@
 # [IEEE TMM 2024] EISNet: A Multi-Modal Fusion Network for Semantic Segmentation with Events and Images
-The code will be available soon.
+
+<div align="center">
+  <img src="figs/Overview_EISNet.pdf"/>
+</div><br/>
