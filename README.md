@@ -6,6 +6,8 @@ This repository is an official implementation of [EISNet](https://ieeexplore.iee
   <img src="figs/Overview_EISNet.jpg"/>
 </div><br/>
 
+If you use any of this code, please cite the following publication:
+
 ```bibtex
 @article{xie2024eisnet,
   title={{EISNet}: A Multi-Modal Fusion Network for Semantic Segmentation with Events and Images},
